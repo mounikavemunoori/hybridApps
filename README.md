@@ -1,7 +1,7 @@
 
 # WebDriverIoProject
- This projec supports for mobile, web, and api automation. Here we are working on hybrid mobile apps
- To implement the web, api and mobile, I have created the separate folder under tests folder
+ This projec supports for mobile, web, and api automation.
+ To implement the web, api and mobile and created the separate folder under tests folder
  tests
      web
      api
@@ -9,13 +9,13 @@
 Created the three different configs for api , web and mobile tests
 
 # Prerequisites
-Node.js
-Appium Server
-Appium Inspector (to find selector)
-Android Studio (for device emulator)
-An Android emulator or real device
-Hybrid apps- chrome:://inspect (to find locator on web)
-Xcode (for iOS Simulator)
+ Node.js
+ Appium Server
+ Appium Inspector (to find selector)
+ Android Studio (for device emulator)
+ An Android emulator or real device
+ Hybrid apps- chrome:://inspect (to find locator on web)
+ Xcode (for iOS Simulator)
 
 # WEB
 
@@ -32,7 +32,8 @@ Create a new directory for your project and navigate to it in your terminal.
 cd hybridApps
 ```
 # Step4: How to setup:
-Clone the project
+Clone the project and run below command to install the packages
+
 ```
 Run npm install
 ```
@@ -40,19 +41,19 @@ Run npm install
 ## API
 TO API api automation, install the supertest node module
 
-# Step 6: Run below command to install api node module
+## Step 6: Run below command to install api node module
 ```
  npm install supertest --save-dev
 ```
 
-# Step 7: To install Chai using npm, can run the following command in the project directory:
+## Step 7: To install Chai using npm, can run the following command in the project directory:
 ```
  npm install chai --save-dev
 ```
 
 # APPIUM/MOBILE
 
-# Step 8: To install Appium dependencies in project using npm
+## Step 8: To install Appium dependencies in project using npm
 ```
 npm install @wdio/appium-service --save-dev
 ```
@@ -64,17 +65,17 @@ npm install @wdio/appium-service --save-dev
 
 Here I have created the three different configs for api , web and mobile 
 
-# Step 9: Run web all tests use below command
+## Step 9: Run web all tests use below command
 ```
 npx wdio run .\wdio.web.conf.js
 ```
 
-# Step 10: Run api all tests use below command
+## Step 10: Run api all tests use below command
 ```
 npx wdio run .\wdio.api.conf.js
 ```
 
-# Step 11: Run mobile all tests use below command
+## Step 11: Run mobile all tests use below command
 
 Make sure before running the mobile test cases, need to start the appium server using below command
 ```
@@ -85,7 +86,7 @@ Make sure before running the mobile test cases, need to start the appium server 
 npx wdio run .\wdio.android.config.js
 ```
 
- # specific spec / test file
+# specific spec / test file
 npx wdio run .\wdio.android.config.js --spec .\tests\mobile\iDVerse.spec.js
 
 # specific suite / test suite
@@ -126,8 +127,12 @@ reporters: [
 ```
 
 # generate the reprots
+```
 allure generate allure-results --clean -o allure-report
+```
+```
 allure open
+```
 
 Reports will be stored in the allure-report folder 
 
