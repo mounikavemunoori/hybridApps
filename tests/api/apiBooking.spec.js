@@ -10,7 +10,7 @@ const request = supertest(jsonData['baseUrl']);
 var bookingId=''
 
 describe('Booking  API tests', () => {
-    it('should create a booking successfully', async () => {
+    it('Verify that creating a booking is successful', async () => {
         const bookingData=  jsonData['originalBookingData']
         const res = await request.post('/booking')
         .send(bookingData)
@@ -24,7 +24,7 @@ describe('Booking  API tests', () => {
         assert.deepInclude(res.body.booking, bookingData);
     });
 
-    it('should return an error for missing required fields', async()=>{
+    it('Verify that an error is returned for missing required fields', async()=>{
         const missingBookingData = jsonData['missingBookingData']
         const res = await request.post('/booking')
             .send(missingBookingData)
@@ -32,7 +32,7 @@ describe('Booking  API tests', () => {
     })
 
     // UpdateBooking API Endpoint Tests
-    it('should update a booking successfully', async () => {
+    it('Verify that updating a booking is successful', async () => {
         const updategBookingData = jsonData['updateBookingData']
         const res = await request.put(`/booking/${bookingId}`)
             .send(updategBookingData)
@@ -45,7 +45,7 @@ describe('Booking  API tests', () => {
     });
 
     // Get Booking
-    it('should retrieve the booking successfully', async () => {
+    it('verify that retrieving the booking is successful', async () => {
         const res = await request
             .get(`/booking/${bookingId}`)
             .set('Accept', jsonData['headers'].Accept)
@@ -58,7 +58,7 @@ describe('Booking  API tests', () => {
     });
 
     // Delete Booking
-    it('should delete the booking successfully', async () => {
+    it('Verify that deleting the booking is successful', async () => {
         const res = await request.delete(`/booking/${bookingId}`)
             .set('Accept', jsonData['headers'].Accept) 
             .set('Authorization', jsonData['headers']['Authorization']); // Include token if necessary
