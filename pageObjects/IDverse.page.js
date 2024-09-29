@@ -23,12 +23,12 @@ class IDVersePage extends Page {
     get documentsList() { return $$('div.document-name')}
     get backButton() { return $('span[class="back_button_label"]')}
 
-    // Native locators
+    // Native locators for Android and IOS
     // camera locators
-    get whileUsingTheApp() { return $('//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_allow_foreground_only_button"]')}
+    get whileUsingTheApp() { return $('//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_allow_foreground_only_button"] | //XCUIElementTypeButton[@name="Allow While Using App"]')}
     // locatons locators
-   get blockLocationBtn() { return $('//android.widget.Button[@text="Block"]')}
-   get allowLocationBtn() { return $('//android.widget.Button[@text="Allow"]')}
+   get blockLocationBtn() { return $('//android.widget.Button[@text="Block"] | //XCUIElementTypeButton[@name="Don’t Allow"]')}
+   get allowLocationBtn() { return $('//android.widget.Button[@text="Allow"] | //XCUIElementTypeButton[@name="Allow"]')}
 
 
     async openUrl(url) {
