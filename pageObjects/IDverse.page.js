@@ -27,7 +27,7 @@ class IDVersePage extends Page {
     // camera locators
     get whileUsingTheApp() { return $('//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_allow_foreground_only_button"] | //XCUIElementTypeButton[@name="Allow While Using App"]')}
     // locatons locators
-   get blockLocationBtn() { return $('//android.widget.Button[@text="Block"] | //XCUIElementTypeButton[@name="Don’t Allow"]')}
+   get blockLocationBtn() { return $('//android.widget.Button[@text="Block"] | //XCUIElementTypeButton[@name="Block"]')}
    get allowLocationBtn() { return $('//android.widget.Button[@text="Allow"] | //XCUIElementTypeButton[@name="Allow"]')}
 
 
