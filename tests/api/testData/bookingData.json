@@ -1,0 +1,36 @@
+{
+    "originalBookingData": {
+        "firstname": "Mounika",
+        "lastname": "Vemunoori",
+        "totalprice": 150,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2024-09-27",
+            "checkout": "2024-09-30"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "missingBookingData": {
+        "lastname": "Vemunoori",
+        "totalprice": 150
+    },
+    "updateBookingData": {
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "totalprice": 200,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2024-10-01",
+            "checkout": "2024-10-05"
+        },
+        "additionalneeds": "Dinner"
+    },
+    "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Basic YWRtaW46cGFzc3dvcmQxMjM=",
+        "Cookie": "token=abc123"
+    },
+    "baseUrl": "https://restful-booker.herokuapp.com",
+    "creatingBookingURI": "/booking"
+}
