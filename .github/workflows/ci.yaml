@@ -1,0 +1,55 @@
+name: Web Automation Tests
+
+# Trigger on push or PR to main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-web-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run WebDriverIO web tests
+      - name: Run WebDriverIO Tests
+        run: npx wdio run wdio.web.conf.js
+
+      # Step 5: Upload test results (optional)
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: web-test-results
+          path: ./reports  # Update with your test report folder
+
+  
+
+
+
+# Checkout code → gets the repository.
+
+# Setup Node.js → installs Node environment.
+
+# Install dependencies → installs all required packages.
+
+# Run tests → executes your automation scripts.
+
+# Upload reports → saves test results for inspection.
