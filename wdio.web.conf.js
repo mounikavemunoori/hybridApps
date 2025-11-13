@@ -73,7 +73,18 @@ export const config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        // browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        maxInstances: 1,
+    browserName: 'chrome',
+    'goog:chromeOptions': {
+        args: [
+            '--headless',          // run in headless mode
+            '--disable-gpu',       // disable GPU for Linux CI
+            '--no-sandbox',        // disable sandbox
+            '--disable-dev-shm-usage', // use /tmp instead of /dev/shm
+            '--window-size=1920,1080'
+        ],
+    }
     }],
 
     //
