@@ -27,6 +27,8 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
+      - name: Install Chrome
+        run: sudo apt-get install -y google-chrome-stable
 
       # Step 4: Run WebDriverIO web tests
       - name: Run WebDriverIO Tests
